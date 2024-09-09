@@ -79,7 +79,7 @@ const Login = () => {
       <div className="container">
         <div className="login-grid">
           <div className="login-image">
-            <img src="/img/login.png" alt="nurse with a cute look" />
+            <img src="/pro/img/login.png" alt="nurse with a cute look" />
           </div>
           <div className="login-form">
             <h1 className="heading">Login Form</h1>

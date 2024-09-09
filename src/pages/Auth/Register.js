@@ -63,7 +63,7 @@ const Register = () => {
         if (response.ok) {
           setSuccessMessage("Registration successful! You can now log in.");
           storTokenInLocalStorage(data.token);
-          setShowPopup(true);        
+          setShowPopup(true);
           setUser({
             username: "",
             email: "",
@@ -71,7 +71,7 @@ const Register = () => {
             password: "",
           });
         } else {
-          setError(data.msg || "Failed to register. Please try again.");          
+          setError(data.msg || "Failed to register. Please try again.");
         }
       } catch (err) {
         console.error("Error:", err);
@@ -101,7 +101,7 @@ const Register = () => {
         <div className="container">
           <div className="register-grid">
             <div className="register-image">
-              <img src="/img/register.png" alt="a nurse with a cute look" />
+              <img src="/pro/img/register.png" alt="a nurse with a cute look" />
             </div>
             <div className="register-form">
               <h1 className="heading">Registration Form</h1>

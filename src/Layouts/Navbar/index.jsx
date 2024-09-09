@@ -82,7 +82,7 @@ const Navbar = () => {
             <>
               <li className="navbar-item">
                 <Link
-                  to="/dashboard"
+                  to="/pro/dashboard"
                   className="navbar-link"
                   onClick={closeMenu}
                 >
@@ -90,7 +90,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar-item">
-                <Link to="/logout" className="navbar-link" onClick={closeMenu}>
+                <Link to="/pro/logout" className="navbar-link" onClick={closeMenu}>
                   Logout
                 </Link>
               </li>
@@ -99,7 +99,7 @@ const Navbar = () => {
             <>
               <li className="navbar-item">
                 <Link
-                  to="/register"
+                  to="/pro/register"
                   className="navbar-link"
                   onClick={closeMenu}
                 >
@@ -107,7 +107,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar-item">
-                <Link to="/login" className="navbar-link" onClick={closeMenu}>
+                <Link to="/pro/login" className="navbar-link" onClick={closeMenu}>
                   Login
                 </Link>
               </li>
