@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../store/auth";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-
   const { API } = useAuth();
-  
+
   const navigate = useNavigate();
   const storTokenInLocalStorage = useAuth().storTokenInLocalStorage;
 
@@ -35,41 +33,35 @@ const Login = () => {
     e.preventDefault();
     const errorMsg = validateForm();
     if (errorMsg) {
-      setError(errorMsg);
-      setSuccessMessage(""); // Clear success message if there's an error
+      toast.error(errorMsg); // Show error toast
     } else {
-      setError("");
-      setSuccessMessage("");
-
       // Prepare request options for the fetch call
       const requestOptions = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(user), // Convert user object to JSON
+        body: JSON.stringify(user),
       };
 
       try {
-        const response = await fetch(API+"/auth/login", requestOptions);
-        const data = await response.json(); // Parse response as JSON
+        const response = await fetch(API + "/auth/login", requestOptions);
+        const data = await response.json();
 
         if (response.ok) {
-          setSuccessMessage("Login successful!");
+          toast.success("Login successful!"); // Show success toast
 
-          const resData = data;
-
-          storTokenInLocalStorage(resData.token);
-
-          setUser({ email: "", password: "" });  
-          navigate("/dashboard"); // Redirect to the dashboard page
+          storTokenInLocalStorage(data.token);
+          setUser({ email: "", password: "" });
+          navigate("/pro/dashboard"); // Redirect to the dashboard page
         } else {
-          // If API returns an error status code
-          setError(data.message || "Login failed. Please check your credentials.");
+          toast.error(
+            data.message || "Login failed. Please check your credentials."
+          );
         }
       } catch (err) {
         console.error("Error:", err);
-        setError("Something went wrong. Please check the server.");
+        toast.error("Something went wrong. Please check the server.");
       }
     }
   };
@@ -107,9 +99,6 @@ const Login = () => {
                   required
                 />
               </div>
-
-              {error && <p className="error-msg">{error}</p>}
-              {successMessage && <p className="success-msg">{successMessage}</p>}
 
               <button type="submit" className="btn btn-primary">
                 Login Now

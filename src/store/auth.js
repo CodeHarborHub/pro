@@ -6,7 +6,7 @@ const API = process.env.REACT_APP_BASE_URL+"/api";
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
   const [user, setUser] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   const storTokenInLocalStorage = (token) => {
     setToken(token);

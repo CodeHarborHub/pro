@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../store/auth";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { API, storTokenInLocalStorage, isLoggedIn } = useAuth();
@@ -10,12 +11,10 @@ const Register = () => {
     phone: "",
     password: "",
   });
-  const [error, setError] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
-  const [showPopup, setShowPopup] = useState(false);
 
   const navigate = useNavigate();
 
+  // Input change handler
   const handleInput = (e) => {
     const { name, value } = e.target;
     setUser({
@@ -24,6 +23,7 @@ const Register = () => {
     });
   };
 
+  // Form validation
   const validateForm = () => {
     const { username, email, phone, password } = user;
     if (!username || !email || !phone || !password) {
@@ -38,16 +38,15 @@ const Register = () => {
     return "";
   };
 
+  // Form submit handler
   const handleSubmit = async (e) => {
     e.preventDefault();
     const errorMsg = validateForm();
+    
     if (errorMsg) {
-      setError(errorMsg);
-      setSuccessMessage("");
+      toast.error(errorMsg);
     } else {
-      setError("");
-      setSuccessMessage("");
-
+      // Clear error and set success message
       const requestOptions = {
         method: "POST",
         headers: {
@@ -61,9 +60,9 @@ const Register = () => {
         const data = await response.json();
 
         if (response.ok) {
-          setSuccessMessage("Registration successful! You can now log in.");
+          toast.success("Registration successful! You can now log in.");
           storTokenInLocalStorage(data.token);
-          setShowPopup(true);
+          navigate("/pro/");          
           setUser({
             username: "",
             email: "",
@@ -71,18 +70,13 @@ const Register = () => {
             password: "",
           });
         } else {
-          setError(data.msg || "Failed to register. Please try again.");
+          toast.error(data.msg || "Failed to register. Please try again.");
         }
       } catch (err) {
         console.error("Error:", err);
-        setError("Something went wrong. Please check the server.");
+        toast.error("Something went wrong. Please check the server.");
       }
     }
-  };
-
-  const handlePopupClose = () => {
-    setShowPopup(false);
-    navigate("/login");
   };
 
   return (
@@ -154,11 +148,6 @@ const Register = () => {
                   />
                 </div>
 
-                {error && <p className="error-msg">{error}</p>}
-                {successMessage && (
-                  <p className="success-msg">{successMessage}</p>
-                )}
-
                 <button type="submit" className="btn btn-primary">
                   Register Now
                 </button>
@@ -166,18 +155,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-      )}
-
-      {/* Popup for registration success */}
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>Registration Successful!</h2>
-            <p>Your account has been created. You can now log in.</p>
-            <button onClick={handlePopupClose}>Go to Login</button>
-          </div>
-        </div>
-      )}
+      )} 
     </section>
   );
 };

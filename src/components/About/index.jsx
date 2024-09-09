@@ -1,5 +1,6 @@
 import React from "react";
 import "./about.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -28,9 +29,9 @@ const About = () => {
             journey. Join us and become part of a vibrant community of tech
             enthusiasts!
           </p>
-          <a href="/courses" className="btn-primary">
+          <Link to="/courses" className="btn">
             Explore Our Courses
-          </a>
+          </Link>
         </div>
       </div>
     </section>
