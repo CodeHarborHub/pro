@@ -1,0 +1,155 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.about-hero {
+  min-height: 60vh;
+  background: linear-gradient(to bottom, var(--ifm-dark-bg-color), transparent),
+    url("/public/banner/img-2.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  padding-top: 8%;
+}
+
+.about-title {
+  font-size: 3.3rem;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.scroll-down {
+  display: inline-block;
+  margin-top: 2rem;
+  color: white;
+  font-size: 1.2rem;
+  border-bottom: 2px solid white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-down:hover {
+  color: #f7ab3c;
+  border-bottom-color: #f7ab3c;
+}
+
+/* About Content */
+.about-content {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.about-mission,
+.about-vision {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.about-mission img,
+.about-vision img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.mission-text,
+.vision-text {
+  max-width: 600px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #f0f0f5;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+/* Team Section */
+.about-team {
+  padding: 2rem 0;
+}
+
+.about-team h2 {
+  margin-bottom: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-member h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-member p {
+  color: #777;
+}
+
+/* Footer */
+.about-footer {
+  background-color: #f7f7f7;
+  padding: 2rem 0;
+}
+
+.about-footer p {
+  color: #555;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 10%;
+  }
+  .about-mission,
+  .about-vision {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mission-text,
+  .vision-text {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .scroll-down {
+    font-size: 1rem;
+  }
+}

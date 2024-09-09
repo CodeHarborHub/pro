@@ -1,0 +1,129 @@
+.about-us-section {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.about-us-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #343a40;
+}
+
+.about-us-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-us-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 6s ease-in-out infinite;
+}
+
+.profile-image {
+  width: 80%;
+  max-height: 400px;
+  border-radius: 8%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+}
+
+.about-us-content {
+  flex: 2;
+  max-width: 600px;
+}
+
+.about-us-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+}
+
+.about-us-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 123, 255, 0.2);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-us-content h2 {
+    font-size: 2rem;
+  }
+
+  .about-us-container {
+    flex-direction: column;
+  }
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-us-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-us-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-us-content p {
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1.2rem;
+  }
+}

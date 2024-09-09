@@ -1,0 +1,341 @@
+.login-section,
+.register-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.login-grid,
+.register-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-image img,
+.register-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input-group input:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+.error-msg {
+  color: red;
+  margin: 1rem;
+}
+
+.success-msg {
+  color: #48df84;
+  margin: 1rem;
+}
+
+.btn {
+  padding: 12px;
+  width: 100%;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004494;
+}
+
+@media (max-width: 768px) {
+  .login-grid,
+  .register-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.logout-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-container {
+  text-align: center;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: var(--ifm-card-bg-color);
+  color: var(--ifm-text-color-light);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.logout-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.logout-container p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.spinner {
+  border: 6px solid var(--ifm-bg-color);
+  border-top: 6px solid var(--spinner-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Overlay for the popup background */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Popup container for content */
+.popup-content {
+  background-color: var(--ifm-card-bg-color); /* Use variable for background color */
+  padding: 30px 40px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transform: scale(0.8);
+  animation: scaleIn 0.5s forwards ease-in-out; /* Scale-in effect */
+}
+
+/* Popup Title */
+.popup-content h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--ifm-text-color-light); /* Use variable for light text color */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Popup Message */
+.popup-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ifm-text-color-light); /* Use variable for light text color */
+  margin-bottom: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Button inside the popup */
+.popup-content button {
+  padding: 12px 24px;
+  background-color: var(--ifm-btn-bg-color); /* Use variable for button background */
+  color: var(--ifm-text-color); /* Use variable for text color */
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Button hover and active states */
+.popup-content button:hover {
+  background-color: var(--ifm-btn-hover-bg-color); /* Use hover variable */
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+.popup-content button:active {
+  background-color: #004494;
+  transform: translateY(0); /* Reset on click */
+}
+
+/* Popup close button */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+  color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Popup card container styles for the logged-in message */
+.popup-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Same overlay background */
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Popup card content */
+.popup-card-content {
+  background-color: var(--ifm-card-bg-color);
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.4s ease;
+}
+
+/* Popup card title */
+.popup-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-text-color-light); /* Consistent color usage */
+}
+
+/* Popup card message */
+.popup-card p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-text-color-light);
+}
+
+/* Button for popup card */
+.popup-card button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: var(--ifm-btn-bg-color);
+  color: var(--ifm-text-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-card button:hover {
+  background-color: var(--ifm-btn-hover-bg-color);
+}
+
+/* Animation for popup card sliding in */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .popup-content,
+  .popup-card-content {
+    padding: 20px;
+  }
+
+  .popup-content h2,
+  .popup-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .popup-content p,
+  .popup-card p {
+    font-size: 1rem;
+  }
+
+  .popup-content button,
+  .popup-card button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
