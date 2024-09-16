@@ -1,5 +1,5 @@
 .contact-page {
-  padding: 50px 20px;
+  padding: 50px 0;
   background-color: var(--ifm-light-bg-color);
   color: var(--ifm-text-color);
 }
@@ -8,13 +8,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
 .contact-form, .contact-map {
   flex: 1;
-  min-width: 300px;
   margin: 20px;
 }
 

@@ -1,5 +1,9 @@
 import React from "react";
 import "./about.css";
+// import Img1 from "/team/img-1.png";
+// import Img1 from "/team/img-1.png";
+// import Img1 from "/team/img-1.png";
+// import Img4 from "";
 
 const About = () => {
 
@@ -22,7 +26,7 @@ const About = () => {
       <div className="about-content container">
         <div className="about-mission" id="our-mission">
           <div className="mission-image">
-            <img src="https://via.placeholder.com/500" alt="Our Mission" />
+            <img src="/img/about-1.jpg" alt="Our Mission" />
           </div>
           <div className="mission-text">
             <h2>Our Mission</h2>
@@ -55,7 +59,7 @@ const About = () => {
             </p>
           </div>
           <div className="vision-image">
-            <img src="https://via.placeholder.com/500" alt="Our Vision" />
+            <img src="/img/about-2.jpg" alt="Our Vision" />
           </div>
         </div>
 
@@ -63,22 +67,22 @@ const About = () => {
           <h2>Meet Our Team</h2>
           <div className="team-grid">
             <div className="team-member">
-              <img src="https://via.placeholder.com/300" alt="Team Member 1" />
-              <h3>John Doe</h3>
+              <img src="https://github.com/ajay-dhangar.png" alt="Team Member 1" />
+              <h3>Ajay Dhangar</h3>
               <p>Founder & CEO</p>
             </div>
             <div className="team-member">
-              <img src="https://via.placeholder.com/300" alt="Team Member 2" />
+              <img src="/team/jane.png" alt="Team Member 2" />
               <h3>Jane Smith</h3>
               <p>Lead Developer</p>
             </div>
             <div className="team-member">
-              <img src="https://via.placeholder.com/300" alt="Team Member 3" />
+              <img src="/team/alex.png" alt="Team Member 3" />
               <h3>Alex Johnson</h3>
               <p>UI/UX Designer</p>
             </div>
             <div className="team-member">
-              <img src="https://via.placeholder.com/300" alt="Team Member 4" />
+              <img src="/team/emily.png" alt="Team Member 4" />
               <h3>Emily Davis</h3>
               <p>Marketing Specialist</p>
             </div>

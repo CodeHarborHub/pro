@@ -62,7 +62,7 @@ const Register = () => {
         if (response.ok) {
           toast.success("Registration successful! You can now log in.");
           storTokenInLocalStorage(data.token);
-          navigate("/pro/");          
+          navigate("/");          
           setUser({
             username: "",
             email: "",
@@ -95,7 +95,7 @@ const Register = () => {
         <div className="container">
           <div className="register-grid">
             <div className="register-image">
-              <img src="/pro/img/register.png" alt="a nurse with a cute look" />
+              <img src="/img/register.png" alt="a nurse with a cute look" />
             </div>
             <div className="register-form">
               <h1 className="heading">Registration Form</h1>

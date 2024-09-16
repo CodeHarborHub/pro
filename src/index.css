@@ -12,27 +12,14 @@
   --ifm-btn-text-color: #333;
   --ifm-btn-hover-bg-color: #ffdd57;
   --ifm-card-bg-color: #0a3d4d;
-  --ifm-footer-bg-color: rgba(50, 7, 48, 0.809);
+  --ifm-footer-bg-color: rgb(50, 7, 48);
   --ifm-link-color: #e2dced;
   --ifm-link-hover-color: #ffdd57;
   --ifm-dark-bg-color: rgba(50, 7, 48, 0.809);
   --ifm-imp-text: #48df84;
-  --spinner-color: #ffdd57;
-}
-
-:root[data-theme="dark"] {
-  --ifm-bg-color: rgba(50, 7, 48, 0.809);
-  --ifm-text-color: #fff;
-  --ifm-btn-bg-color: #ffdd57;
-  --ifm-btn-text-color: #333;
-  --ifm-btn-hover-bg-color: #ffdd57c4;
-  --ifm-card-bg-color: #0a3d4d;
-  --ifm-footer-bg-color: rgba(50, 7, 48, 0.809);
-  --ifm-link-color: #ffdd57;
-  --ifm-link-hover-color: #0c4a4d;
-  --ifm-light-bg-color: #f0f0f0;
-  --ifm-imp-text: #48df84;
-  --spinner-color: #ffdd57;
+  --spinner-color: #ffdd57;  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -41,73 +28,7 @@ body {
   color: var(--ifm-text-color);
 }
 
-.App-content {
-  min-height: 50vh;
-}
-
-main {
+/* main {
   margin-top: 50px;
   padding: 20px;
-}
-
-.error-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: var(--ifm-bg-color);
-  color: var(--ifm-text-color-light);
-  text-align: center;
-}
-
-.error-container {
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: var(--ifm-card-bg-color);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.error-code {
-  font-size: 6rem;
-  font-weight: bold;
-}
-
-.error-message {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.error-description {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn-home {
-  background-color: var(--ifm-btn-bg-color);
-  color: var(--ifm-btn-text-color);
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn-home:hover {
-  background-color: var(--ifm-btn-hover-bg-color);
-}
-
-@media (max-width: 768px) {
-  .error-code {
-    font-size: 4rem;
-  }
-
-  .error-message {
-    font-size: 1.5rem;
-  }
-
-  .error-description {
-    font-size: 1rem;
-  }
-}
+} */

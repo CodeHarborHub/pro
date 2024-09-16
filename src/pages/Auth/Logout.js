@@ -12,7 +12,7 @@ const Logout = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigate("/pro/login");
+      navigate("/login");
     }, 2000);
   }, [navigate]);
 

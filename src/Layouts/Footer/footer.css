@@ -3,6 +3,10 @@
   text-align: left;
   background-color: var(--ifm-footer-bg-color);
   color: var(--ifm-text-color-light);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .footer-container {

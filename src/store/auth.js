@@ -6,7 +6,10 @@ const API = process.env.REACT_APP_BASE_URL+"/api";
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("authToken"));
   const [user, setUser] = useState("");
-  // const [isLoading, setIsLoading] = useState(true);
+  // const [services, setServices] = useState("");
+  // const [isLoading, setIsLoading] = useState(true)
+
+  const authorizationToken = `Bearer ${token}`;
 
   const storTokenInLocalStorage = (token) => {
     setToken(token);
@@ -14,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   let isLoggedIn = !!token;
-  console.log("isLoggedIN ", isLoggedIn);
+  // console.log("isLoggedIN ", isLoggedIn);
 
   const LogoutUser = () => {
     setToken("");
@@ -32,13 +35,13 @@ export const AuthProvider = ({ children }) => {
       const response = await fetch("http://localhost:8080/api/auth/user", {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: authorizationToken,
         },
       });
 
       if (response.ok) {
         const data = await response.json();
-        console.log("user data ", data.msg);
+        // console.log("user data ", data.msg);
         setUser(data.msg);
         // setIsLoading(false);
       } else {
@@ -61,6 +64,7 @@ export const AuthProvider = ({ children }) => {
         LogoutUser,
         user,
         API,
+        authorizationToken,
       }}
     >
       {children}

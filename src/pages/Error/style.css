@@ -1,0 +1,61 @@
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--ifm-bg-color);
+  color: var(--ifm-text-color-light);
+  text-align: center;
+}
+
+.error-container {
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--ifm-card-bg-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.error-code {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.error-message {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-home {
+  background-color: var(--ifm-btn-bg-color);
+  color: var(--ifm-btn-text-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-home:hover {
+  background-color: var(--ifm-btn-hover-bg-color);
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 4rem;
+  }
+
+  .error-message {
+    font-size: 1.5rem;
+  }
+
+  .error-description {
+    font-size: 1rem;
+  }
+}

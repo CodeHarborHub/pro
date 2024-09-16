@@ -10,20 +10,31 @@ import {Register, Login} from "../pages/Auth";
 import Dashboard from "../pages/Dashboard";
 import Logout from "../pages/Auth/Logout";
 import Services from "../pages/Services";
+import Admin from "../Layouts/Admin";
+import AdminUsers from "../Layouts/Admin/Users";
+import AdminContact from "../Layouts/Admin/Contact";
+import AdminUpdate from "../Layouts/Admin/AdminUpdate";
 
 const Routers = () => {
   return (
     <Routes>
-      <Route path="/pro" element={<Home />} />
-      <Route path="/pro/about" element={<About />} />
-      <Route path="/pro/contact" element={<Contact />} />
-      <Route path="/pro/courses" element={<Courses />} />
-      <Route path="/pro/*" element={<Error />} />
-      <Route path="/pro/services" element={<Services />} />
-      <Route path="/pro/dashboard" element={<Dashboard />} />
-      <Route path="/pro/register" element={<Register />} />
-      <Route path="/pro/login" element={<Login />} />
-      <Route path="/pro/logout" element={<Logout />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/courses" element={<Courses />} />
+      <Route path="/*" element={<Error />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/logout" element={<Logout />} />
+      <Route path="/admin/" element={<Admin />}>
+        <Route path="users" element={<AdminUsers />} />
+        <Route path="users/:id/edit" element={<AdminUpdate />} />
+        <Route path="contacts" element={<AdminContact />} />
+        <Route path="courses" element={<h1>AdminCourses</h1>} />
+        <Route path="services" element={<h1>AdminServices</h1>} />
+      </Route>
     </Routes>
   );
 };

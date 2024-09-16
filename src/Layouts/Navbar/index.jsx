@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/pro" className="navbar-link navbar-brand">
+        <Link to="/" className="navbar-link navbar-brand">
           <img
             src="https://codeharborhub.github.io/img/nav-logo.jpg"
             alt="logo"
@@ -54,27 +54,27 @@ const Navbar = () => {
       <div className={`navbar-menu ${menuOpen ? "active" : ""}`}>
         <ul className="navbar-list">
           <li className="navbar-item">
-            <Link to="/pro" className="navbar-link" onClick={closeMenu}>
+            <Link to="/" className="navbar-link" onClick={closeMenu}>
               Home
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/pro/about" className="navbar-link" onClick={closeMenu}>
+            <Link to="/about" className="navbar-link" onClick={closeMenu}>
               About
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/pro/contact" className="navbar-link" onClick={closeMenu}>
+            <Link to="/contact" className="navbar-link" onClick={closeMenu}>
               Contact
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/pro/courses" className="navbar-link" onClick={closeMenu}>
+            <Link to="/courses" className="navbar-link" onClick={closeMenu}>
               Courses
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/pro/services" className="navbar-link" onClick={closeMenu}>
+            <Link to="/services" className="navbar-link" onClick={closeMenu}>
               Services
             </Link>
           </li>
@@ -82,7 +82,7 @@ const Navbar = () => {
             <>
               <li className="navbar-item">
                 <Link
-                  to="/pro/dashboard"
+                  to="/dashboard"
                   className="navbar-link"
                   onClick={closeMenu}
                 >
@@ -90,7 +90,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar-item">
-                <Link to="/pro/logout" className="navbar-link" onClick={closeMenu}>
+                <Link to="/logout" className="navbar-link" onClick={closeMenu}>
                   Logout
                 </Link>
               </li>
@@ -99,7 +99,7 @@ const Navbar = () => {
             <>
               <li className="navbar-item">
                 <Link
-                  to="/pro/register"
+                  to="/register"
                   className="navbar-link"
                   onClick={closeMenu}
                 >
@@ -107,7 +107,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="navbar-item">
-                <Link to="/pro/login" className="navbar-link" onClick={closeMenu}>
+                <Link to="/login" className="navbar-link" onClick={closeMenu}>
                   Login
                 </Link>
               </li>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const Error = () => {
   return (
@@ -10,7 +11,7 @@ const Error = () => {
         <p className="error-description">
           Oops! The page you're looking for doesn't exist or has been moved.
         </p>
-        <Link to="/pro" className="btn-home">
+        <Link to="/" className="btn-home">
           Go Back Home
         </Link>
       </div>
