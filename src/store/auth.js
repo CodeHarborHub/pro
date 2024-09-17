@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   let isLoggedIn = !!token;
-  // console.log("isLoggedIN ", isLoggedIn);
+  console.log("isLoggedIN ", isLoggedIn);
 
   const LogoutUser = () => {
     setToken("");
@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       if (!token) {
         return;
       }
-      const response = await fetch("http://localhost:8080/api/auth/user", {
+      const response = await fetch(API+"/auth/user", {
         method: "GET",
         headers: {
           Authorization: authorizationToken,

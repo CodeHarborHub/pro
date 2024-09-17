@@ -12,7 +12,7 @@ import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Dashboard = () => {
-  const { user, isLoggedIn } = useAuth();
+  const { user } = useAuth();
 
   if (!isLoggedIn) {
     toast.error("You must be logged in to access the dashboard.");
